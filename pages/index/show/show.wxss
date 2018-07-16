@@ -1,0 +1,40 @@
+.clear{
+    clear:both;
+    height:0;
+    overflow:hidden;}  
+.show{display:block;}
+.hidden{display:none;}
+
+.memberheader { width: 100%; height: 400rpx; background: #fff;}
+.memberlogo { width:345rpx; height:141rpx; margin: 0 auto; padding-top: 60rpx; }
+.membername { width:80%; margin: 0 auto; line-height: 60rpx; font-size: 32rpx; text-align: center; color:#000;}
+.membertip { width:80%; margin: 10rpx auto 0rpx; line-height: 36rpx; font-size: 24rpx; text-align: center; color:#000; 
+display:flex;  flex-direction:column; justify-content: center; align-items:center; }
+
+.tip {  height: 36rpx; border: 1rpx #333 solid; border-radius: 24rpx; float: left; margin: 10rpx; padding: 2rpx 16rpx; }
+
+.menu { width: 100%; height: 96rpx; background: #fff; font-size: 32rpx;  line-height: 96rpx; border-bottom:1rpx #dcdcdc solid;}
+.menuwordhere {width: 33.3%;  float: left; text-align: center; color:#d43d3d ;  }
+.menuworddefault {width: 33.3%;  float: left; text-align: center; color:#333;}
+.menuwordhere .herebar {width: 52rpx; height: 2rpx; background:#d43d3d; border-radius: 20rpx;  margin: 0 auto; position: relative; bottom: 2rpx; }
+
+.msg1:first-child {margin-top: 60rpx !important;}
+.msg1:last-child .line .line2{display:none}
+
+.msg1 {width:86%; height:175rpx; margin: 0rpx auto 0rpx ; color:#333; }
+.msg1 .date { width:20%;font-family:italic; text-align: right; float: left;}
+.msg1 .date .day {font-size: 40rpx;font-style:italic;}
+.msg1 .date .year {font-size: 24rpx;font-style:italic;}
+.msg1 .line {width:4%; height: 100rpx;float: left; text-align:center;  margin:0rpx 4%; }
+.msg1 .line .line1 {width:20rpx; height:20rpx; margin: 0 auto;  }
+.msg1 .line .line2 {width:20rpx; height:130rpx; margin: 0 auto; margin-top: 28rpx; }
+.msg1 .msgword {width:68%; float:left; text-align: left; font-size: 28rpx; line-height: 50rpx; height: 150rpx; overflow: hidden;}
+.msg1 .msgwordmore {width:100%; float:left; text-align: left; margin-top: 10rpx; color:#999; font-size: 24rpx; line-height: 50rpx; height: 50rpx; overflow: hidden; }
+
+.msg1 .product { width:46%;  border:1rpx #dcdcdc solid; border-radius: 20rpx; margin-bottom:40rpx; }
+.msg1 .proimg { width:100%; height: 200rpx; }
+.msg1 .proimg image {border-radius: 20rpx 20rpx 0rpx 0rpx; }
+.msg1 .product:nth-child(odd){ float:left}
+.msg1 .product:nth-child(even){ float:right}
+
+.msg1 .proname {width:90%; margin: 0 auto; font-size: 28rpx; line-height: 40rpx; color:#333; padding:20rpx 0rpx; overflow: hidden;text-align: center}

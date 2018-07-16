@@ -1,0 +1,56 @@
+<view class='memberheader' style='background:url({{httpser}}{{show.thumb}}) no-repeat; background-size:100% 100%;opacity:0.8;'>
+  <view class='memberlogo'><image src="{{httpser}}{{show.logo}}" style='width:100%; height:100%;' ></image></view>
+  <view class='membername'>{{show.company}}</view>
+  <view class='membertip '>
+    <view>
+    <view class='tip' wx:for="{{show.lname}}">{{item}}</view>
+    </view>
+  </view>
+</view>
+<view class='menu clear'>
+  <view class="{{selected?'menuwordhere':'menuworddefault'}}" bindtap="selected">企业动态<view class='herebar'></view></view>
+  <view class="{{selected1?'menuwordhere':'menuworddefault'}}" bindtap="selected1">历史业绩<view class='herebar'></view></view>
+  <view class="{{selected2?'menuwordhere':'menuworddefault'}}" bindtap="selected2">主营业务<view class='herebar'></view></view>
+</view>
+
+<view class="{{selected?'show':'hidden'}}">
+  <view class='msg1' wx:for="{{show.dt}}">
+    <view class='date'>
+      <view class='day'>{{item.m}}/{{item.d}}</view>
+      <view class='year'>{{item.y}}</view>
+    </view>
+    <view class='line'>
+      <view class='line1'><image src='/images/line1.png' style='width:100%; height:100%;' ></image></view>
+      <view class='line2'><image src='/images/line2.png' style='width:100%; height:100%;' ></image></view>
+    </view>
+    <view class='msgword' >{{item.title}}</view> 
+  </view>
+</view>
+
+<view class="{{selected1?'show':'hidden'}}">
+  <view class='msg1' wx:for="{{show.yj}}">
+    <view class='date'>
+      <view class='day'>{{item.m}}/{{item.d}}</view>
+      <view class='year'>{{item.y}}</view>
+    </view> 
+    <view class='line'>
+      <view class='line1'><image src='/images/line1.png' style='width:100%; height:100%;' ></image></view>
+      <view class='line2'><image src='/images/line2.png' style='width:100%; height:100%;' ></image></view>      
+    </view>
+    <view class='msgword' >
+      <view>{{item.title}}</view>
+      <!-- <view class='msgwordmore'>{{item.introduction}}</view> -->
+    </view> 
+  </view>
+</view>
+
+<view class="{{selected2?'show':'hidden'}}">
+  <view class='msg1 blank'>
+
+    <view class='product' wx:for="{{show.yw}}">
+      <view class='proimg'><image src='{{httpser}}{{item.thumb}}' style='width:100%; height:100%;'></image></view>
+      <view class='proname'>{{item.title}}</view>
+    </view>
+
+  </view>
+</view>

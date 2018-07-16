@@ -1,0 +1,81 @@
+<view class="contarner">
+  <view class="pro_thumb">
+    <image src="{{ pro.thumb }}"></image>
+  </view>
+
+  <view class="p_headbox">
+    <view class="p_head">
+      <view class="pname">{{pro.pname}}</view>
+      <view class="p_pri"><text class="carts-price">{{pro.price}}</text></view>
+      <view class="p_kf">
+        <image src="/images/kf.png"></image>
+        <contact-button type="default-light" size="12" session-from="weapp"> </contact-button>
+        <contact-button type="default-light" size="12" session-from="weapp"> </contact-button>
+        <contact-button type="default-light" size="12" session-from="weapp"> </contact-button>
+        <contact-button type="default-light" size="12" session-from="weapp"> </contact-button>
+      </view>
+    </view>
+  </view>
+
+   <view class="detail_box">
+     <view class="d_title">详细介绍</view>
+    <view class="red_h"></view> 
+    <view class="d_cont">{{pro.description}}</view>
+  <scroll-view scroll-y class="pdetail" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+        <view class="sc_cont"> 
+          <rich-text nodes="{{ pro.content }}" bindtap="tap"></rich-text> 
+        </view>
+  </scroll-view>
+  </view> 
+
+  <view class="form_box"> 
+    <view class="d_title">收货信息</view>
+    <view class="red_h"></view>
+    <form bindsubmit="formSubmit" report-submit='true'> 
+        <view class="row">
+            <text>姓名：</text>
+            <input type="text" class="inputs" name="truename" placeholder="请输入姓名" />            
+        </view>
+        <view class="row">
+            <text>电话：</text>
+            <input type="number" class="inputs" name="tel" placeholder="请输入手机号" />
+        </view>
+        <view class="row">
+            <text>地址：</text>
+            <input type="text" class="inputs" name="address" placeholder="请输入详细收货地址" />     
+        </view>
+        <view class="row">
+          <text>备注：</text>
+          <input type="text" class="inputs" name="remark" placeholder="选填" />    
+        </view>
+        <view class="basefixed">
+          <!--  选择数量  -->
+          <view class="reduce">
+            <view class="stepper">
+              <text class="{{minusStatuses[index]}}" data-index="{{index}}" catchtap="bindMinus">-</text>
+              <input type="number" name="pnum" data-index="{{index}}" catchchange="bindManual" catchtap="bindManualTapped" value="{{index}}" />
+              <text class="normal" data-index="{{index}}" catchtap="bindPlus">+</text>
+            </view>
+          </view>
+
+          <view class='total'>
+            合计：<view>￥{{totalprice}}</view>
+          </view>
+
+          <view class="instantly">
+              <button type="" class="botts" form-type="submit">立即购买</button>
+          </view> 
+        </view>
+    </form>
+  </view>
+
+   <view class="warning" wx:if="{{ pro.custom }}">
+    <view>{{pro.custom}}</view>
+  </view> 
+
+  <view class="hint">
+      <view class="hint-box" hidden='{{hints}}'>
+           {{hinttext}} 
+      </view>
+  </view>  
+</view>

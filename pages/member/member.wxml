@@ -1,0 +1,4 @@
+<view class="contarner">
+  <image src="{{bigback}}" ></image>
+  <view class="form-sub" bindtap='join'>加入会员</view>
+</view>

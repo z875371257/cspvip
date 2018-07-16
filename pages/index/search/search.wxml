@@ -1,0 +1,45 @@
+<view class="contarner">
+  <view class="head-search">
+      <view class="search-top" bindtap="searchbind">
+          <!-- <form bindsubmit="formSubmit">
+          <image src="/images/search.png" bindtap='searchs' form-type="submit"></image> -->
+          <input type="text" class="search" placeholder='请输入相关内容' auto-focus placeholder-class="search-input" bindinput="bindInput" value='{{inputValue}}' bindchange="bindchange" confirm-type="search"/>
+          <view class="dele" bindtap='cancels'>取消</view>
+          <!-- </form> -->
+      </view>
+  </view>
+
+  <view class="label" hidden='{{labhide}}'>
+    <view class="lab-text">会员类别搜索</view>
+    <view class="lab-box">
+      <view class="lab-son" wx:for="{{label}}"><view class="sons" id="{{item.lid}}" bindtap="bindlabel">{{item.lname}}</view></view>
+    </view>
+  </view>
+
+  <view class="search-result" hidden='{{listhide}}'>
+    <view class="res-box">
+
+      <view class="list-li" wx:for="{{member}}">
+          <view class="li-img" >
+              <image id="{{item.id}}" bindtap="showdetail" src="https://vip.chplaza.com.cn/public{{item.logo}}" ></image>
+          </view>
+          <view class="li-text">
+              <view class="z-tit" id="{{item.id}}" bindtap="showdetail">
+                  {{item.username}}
+              </view>
+              <view class="f-tit">
+                   <view class="lab-son" bindtap="" wx:for="{{item.lname}}"  wx:for-item="ts"><view class="sons">{{ts}}</view></view>
+              </view>
+          </view>
+      </view>
+
+    </view>
+  </view>
+
+  <view class="search-err" hidden='{{err}}'>
+    <view class="err-txt">
+      没有找到相关信息      
+    </view>
+  </view>
+
+</view>

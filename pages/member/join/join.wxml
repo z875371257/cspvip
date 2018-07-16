@@ -1,0 +1,51 @@
+<view class="container">
+    <form bindsubmit="formSubmit">
+        <view class="row">
+            <text>单 位：</text>
+            <input type="text" name="company" placeholder="请输入所在单位" />
+        </view>
+        <view class="row">
+            <text>姓 名：</text>
+            <input type="text" name="truename" placeholder="请输入姓名" />
+        </view>
+
+        <view class="row">
+            <text>电 话：</text>
+            <input type="number" name="tel" placeholder="请输入联系号码" />
+        </view>
+
+        <view class="row">
+            <text>微 信：</text>
+            <input type="text" name="wechats" placeholder="请输入微信号" />
+        </view>
+
+        <view class="row">
+            <button type="" class="botts" form-type="submit">提交</button>
+        </view>
+    </form>
+    <view class="card">
+      <view class="card-box">
+        <view class="card-zx" style='background:url({{zx}});background-size:100% 100%;'> 
+          <contact-button type="default-light" size="12" session-from="weapp"> </contact-button>
+          <contact-button type="default-light" size="12" session-from="weapp"> </contact-button>
+          <contact-button type="default-light" size="12" session-from="weapp"> </contact-button>
+          <contact-button type="default-light" size="12" session-from="weapp"> </contact-button>
+          <contact-button type="default-light" size="12" session-from="weapp"> </contact-button>
+          <contact-button type="default-light" size="12" session-from="weapp"> </contact-button>
+          <contact-button type="default-light" size="12" session-from="weapp"> </contact-button>
+          <contact-button type="default-light" size="12" session-from="weapp"> </contact-button>
+          <contact-button type="default-light" size="12" session-from="weapp"> </contact-button>
+          <contact-button type="default-light" size="12" session-from="weapp"> </contact-button>
+          <contact-button type="default-light" size="12" session-from="weapp"> </contact-button>
+          <contact-button type="default-light" size="12" session-from="weapp"> </contact-button>
+        </view>
+        <view class="card-dh" bindtap='tels' style='background:url({{dh}});background-size:100% 100%;'></view>
+      </view>
+    </view>
+
+    <view class="hint">
+      <view class="hint-box" hidden='{{hints}}'>
+           {{hinttext}} 
+      </view>
+    </view>  
+</view>

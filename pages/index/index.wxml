@@ -1,0 +1,95 @@
+<view class="contarner" hidden='{{loadings}}'>
+    <!-- 大容器上下滚动 -->
+    <scroll-view class="content" scroll-into-view="{{toView}}" scroll-y scroll-with-animation="true" bindscroll="binds">
+        <!-- Banner图  -->
+        <view class="head-image">
+            <image class="imgs" src="{{banner}}" mode="widthFix">
+            </image>
+        </view>
+
+        <!-- 搜索框 -->
+        <view class="head-search">
+            <view class="search-top" bindtap="searchbind">
+                <image src="/images/search.png"></image>
+                <input type="text" class="search" placeholder-class="search-input"
+                />
+            </view>
+        </view>
+        
+        <!-- 最新会员 -->
+        <view class="new-member">
+            <view class="left-hood">
+                <view class="red-left">
+                </view>
+                <view class="tit-left">
+                    最新会员
+                </view>
+            </view>
+            <view class="scroll-box">
+                <scroll-view class="new-scroll" scroll-x style="width:auto;overflow:hidden">
+
+                    <view class="new-img" wx:for="{{news}}" style="background:url({{httpser}}{{item.thumb}}) no-repeat; background-size:100% 100%;">
+                        <image bindtap="showdetail" id="{{item.id}}" src="{{httpser}}{{item.logo}}" class="a-imgs">
+                        </image>
+                    </view>
+  
+                </scroll-view>
+            </view>
+        </view>
+
+        <!-- 推荐会员 -->
+        <view class="hots-member">
+            <view class="left-hood">
+                <view class="red-left">
+                </view>
+                <view class="tit-left">
+                    推荐会员
+                </view>
+            </view>
+            <view class="scroll-box">
+                <scroll-view class="new-scroll" scroll-x style="width:auto;overflow:hidden">
+
+                    <view class="new-img" wx:for="{{hots}}"style="background:url({{httpser}}{{item.thumb}}) no-repeat; background-size:100% 100%;">
+                        <image bindtap="showdetail" id="{{item.id}}" src="{{httpser}}{{item.logo}}" class="a-imgs">
+                        </image>
+                    </view>
+             
+                </scroll-view>
+            </view>
+        </view>
+
+        <!-- ABC排序列表 -->
+        <view class="list-ul" wx:for="{{codess}}">
+            <view class="address_top list-zm" id="{{ 'inToView'+item.id}}">
+                {{item.region}}
+            </view>
+            <view class="list-li" wx:for="{{item.company}}" wx:for-item="mem">
+                <view class="li-img" >
+                    <image id="{{mem.id}}" bindtap="showdetail" src="{{httpser}}{{mem.logo}}"></image>
+                </view>
+                <view class="li-text">
+                    <view class="z-tit" id="{{mem.id}}" bindtap="showdetail">
+                        {{mem.username}}
+                    </view>
+                    <view class="f-tit">
+                         {{mem.intro}} 
+                    </view>
+                </view>
+            </view>
+        </view>
+        
+    </scroll-view>
+
+    <view class="orientation_region" style="display:{{lists}}">
+        <block wx:for="{{codess}}">
+            <view class="orientation_city" bindtap="scrollToViewFn" data-id="{{item.id}}" data-az="{{item.region}}">
+                {{item.region}}
+            </view>
+        </block>
+    </view>
+
+    <view class="ts" style="display:{{ts}}">
+        <view class="zimu">{{zimu}}</view>
+    </view>
+    
+</view>

@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/search/search",
+    "pages/member/member",
+    "pages/index/show/show",
+    "pages/exclusive/show/index",
+    "pages/exclusive/index",
+    "pages/product/index", 
+    "pages/member/join/join"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#d43d3d",
+    "navigationBarTitleText": "光热会员俱乐部",
+    "backgroundColor": "#F9F9F9"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "会员企业",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index-selected.png"
+      },
+      {
+        "pagePath": "pages/exclusive/index",
+        "text": "专属信息",
+        "iconPath": "images/exclusive.png",
+        "selectedIconPath": "images/exclusive-selected.png"
+      },
+      {
+        "pagePath": "pages/member/member",
+        "text": "会员特权",
+        "iconPath": "images/member.png",
+        "selectedIconPath": "images/member-selected.png"
+      }
+    ],
+    "selectedColor": "#d43d3d",
+    "backgroundColor": "#FFFFFF"
+  }
+
+}

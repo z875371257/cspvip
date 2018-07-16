@@ -1,0 +1,19 @@
+<view class="container">
+
+    <view class="cate_box" wx:for="{{pro}}" >
+        <view class="box_tit">{{item.name}}</view>
+
+        <view class="box_pro" wx:for="{{item.child}}" wx:for-item="childs" id="{{childs.pid}}" bindtap="proshow">
+        
+          <view class="pro_img"><view class="gold">会员免费</view><image src='{{childs.thumb}}'></image></view>
+
+          <view class="pro_content">
+            <view class="pro_tit">{{childs.pname}} </view>
+            <view class="pro_price">{{childs.price}}</view>
+          </view>
+
+        </view>
+        
+    </view>
+
+</view>
